@@ -44,7 +44,7 @@ A classe central é `JogoTabuleiro`, uma classe abstrata que define o contrato q
 
 **Herança:** `JogoDaVelha` herda de `JogoTabuleiro` e é obrigada a implementar todos os métodos abstratos.
 
-**Polimorfismo:** o loop do jogo chama `validar_jogada`, `aplicar_jogada` e `verificar_fim` sem saber qual jogo está rodando — cada subclasse responde do seu jeito.
+**Polimorfismo:* o loop do jogo chama `validar_jogada`, `aplicar_jogada` e `verificar_fim` sem saber qual jogo está rodando — cada subclasse responde do seu jeito.
 
 **Encapsulamento:** todos os atributos usam o prefixo `_` e são acessados via `@property`.
 
@@ -56,9 +56,9 @@ Para adicionar um novo jogo, basta criar um arquivo em `src/jogos/` com uma clas
 
 ## Decisões de projeto
 
-A classe `Peca` descrita no enunciado foi omitida intencionalmente. No Jogo da Velha, a peça se reduz a um símbolo, então optamos por representá-la diretamente como atributo do jogador, simplificando a arquitetura sem perder clareza.
+A classe `Peca` descrita no enunciado foi omitida intencionalmente. No Jogo da Velha, a peça se reduz a um símbolo, então É representada diretamente como atributo nome do jogador, simplificando a arquitetura.
 
-O `Tabuleiro` não conhece regras — ele apenas guarda e fornece o estado das casas. Isso permite que o mesmo `Tabuleiro` seja reutilizado por qualquer jogo, independente das suas regras.
+O `Tabuleiro` não conhece regras, ele apenas guarda e fornece o estado das casas. Isso permite que o mesmo `Tabuleiro` seja reutilizado por qualquer jogo, independente das suas regras.
 
 ## Limitações e melhorias futuras
 
