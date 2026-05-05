@@ -23,9 +23,14 @@ class JogoDaVelha(JogoTabuleiro):
     def aplicar_jogada(self, jogada):
         self._tabuleiro.set_casa(jogada.linha, jogada.coluna, jogada.jogador.simbolo)
 
+
+
     def verificar_fim(self):
         simbolo = self.jogador_atual.simbolo
         t = self._tabuleiro
+
+
+
 
         # checa linhas e colunas
         for i in range(3):
@@ -40,6 +45,7 @@ class JogoDaVelha(JogoTabuleiro):
         if all(t.get_casa(i, i) == simbolo for i in range(3)):
             self._vencedor = self.jogador_atual
             return True
+        
         if all(t.get_casa(i, 2 - i) == simbolo for i in range(3)):
             self._vencedor = self.jogador_atual
             return True
@@ -51,6 +57,7 @@ class JogoDaVelha(JogoTabuleiro):
 
         return False
 
+
     def exibir(self):
         t = self._tabuleiro
         print()
@@ -61,3 +68,6 @@ class JogoDaVelha(JogoTabuleiro):
             if i < 2:
                 print("   ---+---+---")
         print()
+
+
+        
