@@ -21,6 +21,9 @@ def pedir_jogada(jogador, jogo):
         except ValueError:
             print("  Digite dois números separados por espaço.")
 
+
+
+
 def main():
     print("=== Jogo da Velha ===\n")
     nome1 = input("Nome  do jogador 1: ")
@@ -32,7 +35,7 @@ def main():
     ]
 
     jogo = JogoDaVelha(jogadores)
-    jogo.inicializar()
+    jogo.inicializar() #comesca
 
     while True:
         jogo.exibir()
@@ -51,3 +54,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+ # JogoDaVelha herda de jogotabuleiro, 
+ # da pra adicionar mais jogaos, mas a falta da 
+ # classe 'peca' faz mta diferenca
+
+
