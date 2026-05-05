@@ -56,7 +56,7 @@ Para adicionar um novo jogo, basta criar um arquivo em `src/jogos/` com uma clas
 
 ## Decisões de projeto
 
-A classe `Peca` descrita no enunciado foi omitida intencionalmente. No Jogo da Velha, a peça se reduz a um símbolo, então É representada diretamente como atributo nome do jogador, simplificando a arquitetura.
+A classe `Peca` descrita no enunciado foi omitida intencionalmente.  |erro principal, tarde demais pra corrigir|  No Jogo da Velha, a peça se reduz a um símbolo, então É representada diretamente como atributo nome do jogador, simplificando a arquitetura.
 
 O `Tabuleiro` não conhece regras, ele apenas guarda e fornece o estado das casas. Isso permite que o mesmo `Tabuleiro` seja reutilizado por qualquer jogo, independente das suas regras.
 

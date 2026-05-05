@@ -17,13 +17,10 @@ class JogoTabuleiro(ABC): #clase pra criar as abstratas
         # passa pro prox. jogador (volta ao 0 depois do ultimo) 
         self._turno_atual = (self._turno_atual + 1) % len(self._jogadores) 
 
-
-
-
     #  metodos que todo jogo deve implementar __
     @abstractmethod
     def inicializar(self):
-         """Prepara o tabuleiro para começar."""
+        """Prepara o tabuleiro para começar."""
         pass
 
 
@@ -46,5 +43,6 @@ class JogoTabuleiro(ABC): #clase pra criar as abstratas
     def exibir(self):
         """Mostra o estado atual do tabuleiro no terminal."""
         pass
-
+ 
+        # encapsulamento em _jogadores, _turno_atual e _encerrado, acesso controlado @property e metodos
     #tem heranca em abc e abstractmethod 

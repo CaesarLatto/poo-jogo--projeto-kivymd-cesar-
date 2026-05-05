@@ -1,9 +1,9 @@
 #      src/core/tabuleiro.py
 
 
-class Tabuleiro:
+class Tabuleiro: #define class 
     def __init__(self, linhas, colunas):
-        self._linhas = linhas
+        self._linhas = linhas 
         self._colunas = colunas
         # grade começa toda vazia (None = vazio)
         self._grade = [[None] * colunas for _ in range(linhas)]
@@ -18,6 +18,7 @@ class Tabuleiro:
     def set_casa(self, linha, coluna, valor): 
         self._grade[linha][coluna] = valor
 
+
     def casa_vazia(self, linha, coluna):
         return self._grade[linha][coluna] is None
 
@@ -30,7 +31,7 @@ class Tabuleiro:
         return self._linhas
 
     @property
-    
+
     def colunas(self):
         return self._colunas
     
