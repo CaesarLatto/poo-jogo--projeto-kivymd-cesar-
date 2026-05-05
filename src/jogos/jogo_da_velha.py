@@ -1,7 +1,9 @@
-# src/jogos/jogo_da_velha.py
+# src/jogos/jogo_da_velha. py
 
-from core.jogo import JogoTabuleiro
+from core.jogo import JogoTabuleiro #importa a classe jogotabuleiro
 from core.tabuleiro import Tabuleiro
+
+
 
 class JogoDaVelha(JogoTabuleiro):
 
@@ -20,6 +22,7 @@ class JogoDaVelha(JogoTabuleiro):
             return False
         return True
 
+
     def aplicar_jogada(self, jogada):
         self._tabuleiro.set_casa(jogada.linha, jogada.coluna, jogada.jogador.simbolo)
 
@@ -29,7 +32,7 @@ class JogoDaVelha(JogoTabuleiro):
         simbolo = self.jogador_atual.simbolo
         t = self._tabuleiro
 
-
+#indentacao aqui encima eh bem sensivel
 
 
         # checa linhas e colunas
@@ -50,6 +53,8 @@ class JogoDaVelha(JogoTabuleiro):
             self._vencedor = self.jogador_atual
             return True
 
+
+
         # checa empate (nenhuma casa vazia)
         if all(not t.casa_vazia(i, j) for i in range(3) for j in range(3)):
             self._vencedor = None
@@ -59,15 +64,14 @@ class JogoDaVelha(JogoTabuleiro):
 
 
     def exibir(self):
-        t = self._tabuleiro
+        t = self._tabuleiro #t facilita acesso ao tabuleiro
         print()
-        print("    0   1   2")
+        print("    0   1   2") #cabeçalho das colunas
         for i in range(3):
             linha = f"  {'  | '.join(t.get_casa(i, j) or '.' for j in range(3))}"
             print(f"{i} {linha}")
             if i < 2:
-                print("   ---+---+---")
-        print()
+                print("   -----------")  # linha divisória
+        print() #imprime tudo certo, assim espero
 
 
-        
