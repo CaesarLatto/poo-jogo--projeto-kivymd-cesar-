@@ -1,14 +1,15 @@
 Cesar Augusto S Fifolato
 RA:2840482421022
 
-Projeto de P.O.O. com Python.  
+PARTE 2:
+Projeto de P.O.O. com Python e KivyMD.  
 
 ## Integrantes
 
  Cesar Augusto
 
 
-
+## WORK IN PROGRESS
 ## Jogo implementado
 
 - Jogo da Velha — partida para dois jogadores, via terminal.
