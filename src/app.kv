@@ -1,0 +1,24 @@
+ScreenManager:
+    MenuScreen:
+    Boardscreen:
+
+<MenuScreen>:
+    name: "MenuJogo"
+    MDLabel:
+        text: "Jogo da Velha"
+        halign: "center"
+    MDRaisedButton:
+        text: "Começar"
+        on_release: app.root.current = "board"
+    MDLabel:
+        text: "Jogo2"
+        halign: "center"
+    MDRaisedButton:
+        text: "Start"
+        on_release: app.root.curremt = "board"
+
+<BoardScreen>:
+    name: "board"
+    MDLabel:
+        text: "Aqui vai o tabuleiro"
+        halign: "center"
