@@ -86,13 +86,14 @@ class BoardScreen(MDScreen):
                 symbol = self.game._tabuleiro.get_casa(row, col)
                 self.cell_buttons[row * 3 + col].text = symbol or ""
 
-    def update_turn_label(self):
+    def update_turn_label(self): #mostra o turno
         if self.game:
             self.ids.label_turno.text = (
                 f"Turno do Jogador: {self.game.jogador_atual.nome} "
                 f"({self.game.jogador_atual.simbolo})"
             )
 
+            #preciso criar alguma coisa pra reiniciar o jogo
     def reset_board(self):
         if self.game:
             self.game.inicializar()
@@ -104,12 +105,13 @@ class BoardScreen(MDScreen):
     def voltar_menu(self):
         self.manager.current = "menu"
 
-
+#ate q esse kivy n eh tao chato q nem o firebase
 class JogoDaVelhaApp(MDApp):
     def build(self):
         return Builder.load_file(str(KV_PATH))
 
-    def start_game(self):
+ # função do "iniciar jogo"
+    def start_game(self): 
         menu_screen = self.root.get_screen("menu")
         player1_name = menu_screen.ids.player1.text.strip() or "Jogador 1"
         player2_name = menu_screen.ids.player2.text.strip() or "Jogador 2"

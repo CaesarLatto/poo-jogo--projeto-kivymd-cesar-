@@ -12,21 +12,17 @@ Projeto de P.O.O. com Python e KivyMD.
 ## WORK IN PROGRESS
 ## Jogo implementado
 
-- Jogo da Velha — partida para dois jogadores, via terminal.
+- Jogo da Velha — partida para dois jogadores, via ~~terminal~~ KivyMD!!
+
 
 ---
 
-## Como executar
+## COMO RODAR:
 
 ```bash
 cd c:\Users\Cesar\Downloads\TrabPOOCESAR
 .\venv\Scripts\python.exe src\appkivy.py
-```
 
-Para rodar os testes:
-
-```bash
-python testes/teste_jgdavelha.py
 ```
 
 ## Arquitetura
@@ -51,16 +47,3 @@ A classe central é `JogoTabuleiro`, uma classe abstrata que define o contrato q
 
 **Relações entre objetos:** `JogoDaVelha` possui um `Tabuleiro` por composição. `JogoTabuleiro` referencia uma lista de `Jogador` por agregação. `Jogada` referencia o `Jogador` que a fez por associação.
 
-## Extensibilidade
-
-Para adicionar um novo jogo, basta criar um arquivo em `src/jogos/` com uma classe que herda de `JogoTabuleiro` e implementa os 5 métodos obrigatórios. Nenhum arquivo do `core` precisa ser modificado.
-
-## Decisões de projeto
-
-A classe `Peca` descrita no enunciado foi omitida intencionalmente.  |erro principal, tarde demais pra corrigir|  No Jogo da Velha, a peça se reduz a um símbolo, então É representada diretamente como atributo nome do jogador, simplificando a arquitetura.
-
-O `Tabuleiro` não conhece regras, ele apenas guarda e fornece o estado das casas. Isso permite que o mesmo `Tabuleiro` seja reutilizado por qualquer jogo, independente das suas regras.
-
-## Limitações e melhorias futuras
-
-A arquitetura atual foi pensada para jogos de colocação de peças. Jogos com peças que se movem, como Damas ou Xadrez, exigiriam uma classe `Peca` com atributos de posição e tipo. A interação é feita inteiramente via terminal, sem interface gráfica. Novos jogos precisariam de seus próprios arquivos de teste.

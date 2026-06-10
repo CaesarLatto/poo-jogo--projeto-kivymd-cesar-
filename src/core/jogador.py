@@ -7,11 +7,11 @@ class Jogador:
         self._simbolo = simbolo
 
 
-    @property
+    @property #permite acessar o nome e simbolo, mas não modificar diretamente
     def nome(self):
         return self._nome
 
-    @property 
+    @property
     def simbolo(self): 
         return self._simbolo 
 
