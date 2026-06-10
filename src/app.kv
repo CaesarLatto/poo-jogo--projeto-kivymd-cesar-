@@ -1,24 +1,92 @@
 ScreenManager:
     MenuScreen:
-    Boardscreen:
+    BoardScreen:
 
 <MenuScreen>:
-    name: "MenuJogo"
-    MDLabel:
-        text: "Jogo da Velha"
-        halign: "center"
-    MDRaisedButton:
-        text: "Começar"
-        on_release: app.root.current = "board"
-    MDLabel:
-        text: "Jogo2"
-        halign: "center"
-    MDRaisedButton:
-        text: "Start"
-        on_release: app.root.curremt = "board"
+    name: "menu"
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "20dp"
+        padding: "20dp"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        adaptive_height: True
+
+        MDLabel:
+            text: "Jogo da Velha"
+            halign: "center"
+            font_style: "H4"
+
+        MDTextField:
+            id: player1
+            hint_text: "Nome do Jogador 1"
+            text: "Jogador X"
+            required: True
+            helper_text_mode: "on_error"
+
+        MDTextField:
+            id: player2
+            hint_text: "Nome do Jogador 2"
+            text: "Jogador O"
+            required: True
+            helper_text_mode: "on_error"
+
+        MDRaisedButton:
+            text: "Começar Jogo"
+            pos_hint: {"center_x": 0.5}
+            on_release: app.start_game()
 
 <BoardScreen>:
     name: "board"
-    MDLabel:
-        text: "Aqui vai o tabuleiro"
-        halign: "center"
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "16dp"
+        spacing: "16dp"
+
+        # Barra superior com botão para voltar ao menu
+        MDTopAppBar:
+            title: "Partida"
+            anchor_title: "left"
+            left_action_items: [["arrow-left", lambda x: root.voltar_menu()]]
+
+        # Exibe de quem é a vez
+        MDLabel:
+            id: label_turno
+            text: "Turno do Jogador: X"
+            halign: "center"
+            font_style: "H5"
+            size_hint_y: None
+            height: "40dp"
+
+        MDLabel:
+            id: label_result
+            text: ""
+            halign: "center"
+            theme_text_color: "Error"
+            size_hint_y: None
+            height: "30dp"
+
+        # Centraliza a grade do tabuleiro na tela
+        AnchorLayout:
+            anchor_x: "center"
+            anchor_y: "center"
+
+            MDGridLayout:
+                id: grid_tabuleiro
+                cols: 3
+                rows: 3
+                size_hint: None, None
+                size: "300dp", "300dp"
+                spacing: "8dp"
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: "48dp"
+            spacing: "12dp"
+
+            MDRaisedButton:
+                text: "Reiniciar"
+                on_release: root.reset_board()
+
+            MDFlatButton:
+                text: "Voltar"
+                on_release: root.voltar_menu()

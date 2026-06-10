@@ -7,7 +7,7 @@ from jogos.jogo_da_velha import JogoDaVelha
 
 
 
-def pedir_jogada(jogador, jogo): 
+def pedir_jogada(jogador, jogo):  // funcao que pede a jogada do jogador, e validar a entrada
     while True:
         try:
             entrada = input(f"  Vez de {jogador} — linha coluna (ex: 1 2): ")

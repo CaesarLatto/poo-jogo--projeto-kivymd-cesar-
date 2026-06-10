@@ -19,8 +19,8 @@ Projeto de P.O.O. com Python e KivyMD.
 ## Como executar
 
 ```bash
-cd src
-python main.py
+cd c:\Users\Cesar\Downloads\TrabPOOCESAR
+.\venv\Scripts\python.exe src\appkivy.py
 ```
 
 Para rodar os testes:
